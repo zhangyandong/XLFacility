@@ -124,13 +124,13 @@
 
 #if TARGET_OS_IPHONE
   if (!_suspendInBackground) {
-    _backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-      [self stop];
-      _restart = YES;
-
-      [[UIApplication sharedApplication] endBackgroundTask:_backgroundTask];
-      _backgroundTask = UIBackgroundTaskInvalid;
-    }];
+//    _backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+//      [self stop];
+//      _restart = YES;
+//
+//      [[UIApplication sharedApplication] endBackgroundTask:_backgroundTask];
+//      _backgroundTask = UIBackgroundTaskInvalid;
+//    }];
   }
   _restart = NO;
 #endif
@@ -162,7 +162,7 @@
 
 #if TARGET_OS_IPHONE
   if (_backgroundTask != UIBackgroundTaskInvalid) {
-    [[UIApplication sharedApplication] endBackgroundTask:_backgroundTask];
+//    [[UIApplication sharedApplication] endBackgroundTask:_backgroundTask];
     _backgroundTask = UIBackgroundTaskInvalid;
   }
 #endif
